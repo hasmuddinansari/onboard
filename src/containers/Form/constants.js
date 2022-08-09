@@ -1,3 +1,6 @@
+import Single from 'template/images/single.png'
+import Group from 'template/images/group.png'
+
 export const HEADERS = {
     STEP_1: {
         title: 'Welcome! First things first...',
@@ -10,17 +13,33 @@ export const HEADERS = {
     STEP_3: {
         title: "How are you planning to use Eden?",
         subTitle: "We'll streamline your setup experience accordingly."
+    },
+}
+
+export const SUBMIT_HEADER = {
+    STEP_4: {
+        title: "Congratulation #Eden!",
+        subTitle: "You have completed onboarding, you can start using the Eden!"
     }
 }
 
 export const WEBSITE = 'www.eden.com/'
+
+export const BUTTON_TEXT = {
+    default:'Create Workspace',
+    launch:'Launch Eden'
+}
 
 export const STEPS = {
     STEP_1: 'STEP_1',
     STEP_2: 'STEP_2',
     STEP_3: 'STEP_3',
     STEP_4: 'STEP_4',
+    SUBMIT:'SUBMIT'
 }
+
+const { SUBMIT, ...ALL_STEPS } = STEPS
+export const ALL_STEPS_LIST = Object.keys(ALL_STEPS)
 
 export const NEXT_STEP = {
     STEP_1: 'STEP_2',
@@ -48,18 +67,24 @@ export const FORM = {
         name: "workSpaceUrl",
         label: "Workspace Url (Optional)",
         placeholder: "Example.com",
-        type: 'webiste'
+        type: 'website'
     },
     ],
     STEP_3: [{
-        name: "workSpaceName",
-        label: "Workspace Name",
-        placeholder: "Eden",
-        type: 'checkbox'
-    }, {
-        name: "workSpaceUrl",
-        label: "Workspace Url (Optional)",
-        placeholder: "Example.com",
-        type: 'checkbox'
+        type:'groupCheckBox',
+        elements:[
+            {
+                name:'single',
+                icon: Single,
+                heading: "For myself",
+                subHeading: "Write better. Think more clearly. Stay oraganized.",
+            }, {
+                name:"group",
+                icon:Group,
+                name: "workSpaceUrl",
+                heading: "With My team",
+                subHeading: "Wikis, docs, tasks & projects. all in one place",
+            }
+        ]
     }]
 }

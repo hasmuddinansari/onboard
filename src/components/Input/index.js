@@ -1,8 +1,38 @@
-import { CustomInput, InputWrapper, Label } from "./styled";
+import { CustomInput, InputWrapper, Label, CustomCheck, LogoImg } from "./styled";
 
-export const Input = ({ label, onChange, name }) => (
+const CheckBox = ({ icon, heading, subHeading, onClick, name, form }) => (
+    <CustomCheck onClick={() => onClick({ value: name, fieldName: 'onBoardType' })} active={form.onBoardType===name}>
+        <LogoImg src={icon}/>
+        <p className="heading">{heading}</p>
+        <p className='sub-heading text-mute'>{subHeading}</p>
+    </CustomCheck>
+)
+
+const MultiCheck = ({ elements, ...other })=>(
+    <div className="flex-center">
+        {elements.map(item => <CheckBox {...item} {...other}  />)}
+    </div>
+)
+
+
+export const InputBox = ({ label, onChange, name, placeholder, form }) => (
     <InputWrapper>
         <Label htmlFor={label}>{label}</Label>
-        <CustomInput onChange={onChange} name={name} />
+        <CustomInput placeholder={placeholder} onChange={onChange} name={name} value={form[name]} />
     </InputWrapper>
 )
+
+const Mapper = {
+    checkbox: CheckBox,
+    default: InputBox,
+    groupCheckBox: MultiCheck
+}
+
+export const Input = (props) => {  
+    const Component = Mapper[props.type] || Mapper.default
+    return <Component {...props} />
+}
+
+Input.defaultProps = {
+    type:'default'
+}

@@ -10,7 +10,6 @@ export const MainContainer = styled.main`
 export const Container = styled.div`
     min-height:70%;
     width:50%;
-    border:1px solid black;
 `
 
 export const LogoContainer = styled.div`
