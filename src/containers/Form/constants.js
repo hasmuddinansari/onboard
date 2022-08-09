@@ -81,7 +81,6 @@ export const FORM = {
             }, {
                 name:"group",
                 icon:Group,
-                name: "workSpaceUrl",
                 heading: "With My team",
                 subHeading: "Wikis, docs, tasks & projects. all in one place",
             }
