@@ -1,7 +1,7 @@
 import "react-step-progress-bar/styles.css";
 import { Step, ProgressBar } from "react-step-progress-bar";
 import { ALL_STEPS_LIST } from "containers/Form/constants";
-import { ChildProgress, CustomProgress } from "./style";
+import { ChildProgress } from "./style";
 
 
 const getStepPosition = (currentStep) => {
