@@ -4,7 +4,7 @@ import { Progress } from "components/Progress"
 import { BUTTON_TEXT, FORM, HEADERS, NEXT_STEP, STEPS, SUBMIT_HEADER } from "./constants"
 import { Heading, Button, CustomForm, Title, SubTitle, Success } from "./style"
 
-export const Form = ({ }) => {
+export const Form = () => {
     const [step, setStep] = useState(STEPS.STEP_1)
     const [form, setForm] = useState({})
 
