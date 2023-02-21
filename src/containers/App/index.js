@@ -1,20 +1,19 @@
 import { Form } from "containers/Form";
-import LogoImage from 'template/images/logo.png'
+import LogoImage from "template/images/logo.png";
 import { Container, Logo, LogoContainer, MainContainer } from "./styled";
 
 function App() {
-    return (
-        <MainContainer>
-            <Container>
+  return (
+    <MainContainer>
+      <Container>
+        <LogoContainer className="flex-justify-center">
+          <Logo src={LogoImage} />
+        </LogoContainer>
 
-                <LogoContainer className="flex-justify-center">
-                    <Logo src={LogoImage}/>
-                </LogoContainer>
-
-                <Form />
-            </Container>
-        </MainContainer>
-    );
+        <Form />
+      </Container>
+    </MainContainer>
+  );
 }
 
 export default App;
